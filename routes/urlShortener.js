@@ -1,18 +1,16 @@
 import express from 'express';
 import { urlEncoder } from '../utils/url_shortener_functions.js';
+import { urlShortenerController } from '../controllers/shortController.js';
 
 const router=express.Router();
 
 
-router.get('/',(req,res)=>{
-    res.send('<h2>URL shortener</h2>')
-    console.log("Router Res !!")
-})
+// router.get('/',(req,res)=>{
+//     res.send('<h2>URL shortener</h2>')
+//     console.log("Router Res !!")
+// })
 
-router.get('/:url',(req,res)=>{
-    // console.log(req.params);
-    urlEncoder(req.params.url);
-})
+router.get('/',urlShortenerController)
 
 
 
