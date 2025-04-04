@@ -10,5 +10,5 @@ export const getOriginalController=async(req,res)=>{
             "Error":"Url not found !!"
         })
     }
-    console.log(url);
+    res.redirect(url.url)
 }

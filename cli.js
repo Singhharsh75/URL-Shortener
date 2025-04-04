@@ -2,6 +2,7 @@
 
 import chalk from "chalk";
 import { Command } from "commander";
+import { fetchShort } from "./controllers/cliFunctions.js";
 
 const program= new Command()
 
@@ -17,5 +18,12 @@ program
     .action(()=>{
         console.log("created something!!")
     })
+
+program
+    .command("short <url>")
+    .description("shorten's a url")
+    .action((url)=>{
+        fetchShort(url);
+    })    
 
 program.parse();
